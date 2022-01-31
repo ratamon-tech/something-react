@@ -1,15 +1,10 @@
-// 0から5まで出力
-for (var i = 0; i < 6; i++) {
-    console.log(i)
-;}
-
 const LASTNAME = 'Tech'
 const FASTNAME = 'Ratamon'
 
-console.log(`${FASTNAME} ${LASTNAME} is here.`);
+// console.log(`${FASTNAME} ${LASTNAME} is here.`);
 
-const person = (firstName, lastName) => ({
-    first:  firstName,
+const person = (firstname, lastName) => ({
+    first:  firstname,
     last: lastName
 });
 
@@ -24,4 +19,28 @@ const tahoe = {
     }
 };
 
+console.log(tahoe.mountains);
 tahoe.print();
+
+// destructuring
+
+const lordify = ({ firstname }) => {
+    console.log(`${firstname} of Canterbury`)
+};
+
+const lordify2 = ({ spouse: { firstname } }) => {
+    console.log(`${firstname} of Canterbury`)
+};
+
+
+const regularPerson = {
+    firstname: "Bill",
+    lastname: "Wilson",
+    spouse: {
+        firstname: "Phil",
+        lastname: "Wilson"
+    }
+};
+
+lordify(regularPerson);
+lordify2(regularPerson);
