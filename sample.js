@@ -9,7 +9,7 @@ const person = (firstname, lastName) => ({
 });
 
 console.log(person("Ratamon", "Tech"));
-
+/*
 const tahoe = {
     mountains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
     print: function(delay = 1000) {
@@ -21,7 +21,7 @@ const tahoe = {
 
 console.log(tahoe.mountains);
 tahoe.print();
-
+*/
 // destructuring
 
 const lordify = ({ firstname }) => {
@@ -44,3 +44,18 @@ const regularPerson = {
 
 lordify(regularPerson);
 lordify2(regularPerson);
+
+// spread operator
+
+function directions(...args) {
+    let [start, ...remaining] = args;
+    let [finish, ...stops] = remaining.reverse();
+
+    console.log(`drive through ${args.length} towns`);
+    console.log(`start in ${start}`);
+    console.log(`the destination is ${finish}`);
+    console.log(`stopping ${stops.length} times in between`);
+    console.log(`stops are ${stops.join(' and ')}`);
+}
+
+directions("Truckee", "Tahoe City", "Sunnyside", "Homewood", "Tahomo");
